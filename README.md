@@ -1,6 +1,8 @@
 # CyberMatrix Hacking Simulator
 
-![CyberMatrix Logo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp7828555.jpg&f=1&nofb=1&ipt=5b74a8afffbceea809e9d5374c541d7826ddad19d55d1c402f35ab5e78803a2d&ipo=images)
+
+![Screenshot of CyberMatrix Hacking Simulator](Screenshot from 2025-03-13 20-11-18.png)
+
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 A visually stunning, interactive hacking simulator with a retro-cyberpunk aesthetic. This project creates an immersive "Hollywood-style" hacking experience with animations, simulated terminal commands, attack maps, and system statistics.
