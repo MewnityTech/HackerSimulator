@@ -1,7 +1,7 @@
 # CyberMatrix Hacking Simulator
 
 
-![Screenshot of CyberMatrix Hacking Simulator](Screenshot from 2025-03-13 20-11-18.png)
+![(Screenshot from 2025-03-13 20-11-18.png)]
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
