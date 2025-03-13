@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="login-container">
+        <div class="matrix-background" id="matrix-canvas"></div>
+        <div id="login-box">
+            <h1>TERMINAL ACCESS</h1>
+            <form id="login-form">
+                <label for="username">USERNAME:</label>
+                <input type="text" id="username" placeholder="admin" autocomplete="off" value="admin">
+                
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="password" placeholder="*****" autocomplete="off">
+                
+                <button type="submit" id="login-button">ACCESS</button>
+                <div id="error-message">ACCESS DENIED</div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="dashboard">
+        <div class="dashboard-header">
+            <div class="dashboard-title">CYBERMATRIX HACKING PLATFORM v2.1</div>
+            <div class="user-info">
+                <div class="user-status"></div>
+                <span>ADMIN [ROOT ACCESS]</span>
+            </div>
+        </div>
+        
+        <div class="dashboard-content">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-title">TERMINAL</div>
+                    <div class="terminal-controls">
+                        <span>-</span>
+                        <span>□</span>
+                        <span>×</span>
+                    </div>
+                </div>
+                <div class="terminal-content" id="terminal-content"></div>
+            </div>
+            
+            <div class="world-map">
+                <div class="map-header">GLOBAL ATTACK MAP</div>
+                <div class="map-container">
+                    <div class="map-overlay"></div>
+                    <div id="map-points"></div>
+                </div>
+            </div>
+            
+            <div class="binary-streams">
+                <div class="binary-header">DATA STREAMS</div>
+                <div class="binary-content" id="binary-container"></div>
+            </div>
+            
+            <div class="stats-panel">
+                <div class="stats-header">SYSTEM STATS</div>
+                <div class="stats-content">
+                    <div class="stat-item">
+                        <div class="stat-name">CPU USAGE</div>
+                        <div class="stat-value" id="cpu-value">0%</div>
+                        <div class="progress-bar">
+                            <div class="progress-value" id="cpu-bar"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-name">MEMORY</div>
+                        <div class="stat-value" id="memory-value">0%</div>
+                        <div class="progress-bar">
+                            <div class="progress-value" id="memory-bar"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-name">ENCRYPTION</div>
+                        <div class="stat-value" id="encryption-value">0%</div>
+                        <div class="progress-bar">
+                            <div class="progress-value" id="encryption-bar"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-name">NETWORK</div>
+                        <div class="stat-value" id="network-value">0 Mbps</div>
+                        <div class="progress-bar">
+                            <div class="progress-value" id="network-bar"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-name">ACTIVE SESSIONS</div>
+                        <div class="stat-value" id="sessions-value">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-name">UPTIME</div>
+                        <div class="stat-value" id="uptime-value">00:00:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

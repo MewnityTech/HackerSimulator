@@ -1,0 +1,363 @@
+:root {
+    --main-bg-color: #000;
+    --hacker-green: #0f0;
+    --hacker-green-dark: #050;
+    --hacker-blue: #0ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    color: var(--hacker-green);
+}
+
+body {
+    background-color: var(--main-bg-color);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+#login-box {
+    background-color: rgba(0, 20, 0, 0.8);
+    border: 1px solid var(--hacker-green);
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 0 20px var(--hacker-green);
+    animation: pulse 2s infinite;
+    z-index: 1;
+    width: 350px;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px var(--hacker-green); }
+    50% { box-shadow: 0 0 20px var(--hacker-green); }
+    100% { box-shadow: 0 0 10px var(--hacker-green); }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--hacker-green);
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 20, 0, 0.5);
+    border: 1px solid var(--hacker-green);
+    color: var(--hacker-green);
+    font-size: 16px;
+    box-shadow: 0 0 5px var(--hacker-green);
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 15px var(--hacker-green);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--hacker-green-dark);
+    border: 1px solid var(--hacker-green);
+    color: var(--hacker-green);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px var(--hacker-green);
+}
+
+button:hover {
+    background-color: var(--hacker-green);
+    color: var(--main-bg-color);
+    box-shadow: 0 0 20px var(--hacker-green);
+}
+
+.matrix-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#error-message {
+    color: #f00;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    visibility: hidden;
+    text-shadow: 0 0 5px #f00;
+}
+
+#dashboard {
+    display: none;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 20, 0, 0.5);
+    border-bottom: 1px solid var(--hacker-green);
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--hacker-green);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-status {
+    width: 10px;
+    height: 10px;
+    background-color: var(--hacker-green);
+    border-radius: 50%;
+    margin-right: 5px;
+    box-shadow: 0 0 10px var(--hacker-green);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: calc(100vh - 100px);
+}
+
+.terminal {
+    background-color: rgba(0, 20, 0, 0.5);
+    border: 1px solid var(--hacker-green);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px var(--hacker-green);
+    overflow: hidden;
+    grid-row: span 2;
+}
+
+.terminal-header {
+    border-bottom: 1px solid var(--hacker-green);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.terminal-title {
+    font-weight: bold;
+}
+
+.terminal-controls span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.terminal-content {
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+.terminal-line {
+    margin-bottom: 5px;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.terminal-prompt {
+    color: var(--hacker-blue);
+}
+
+.world-map {
+    background-color: rgba(0, 20, 0, 0.5);
+    border: 1px solid var(--hacker-green);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px var(--hacker-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-header {
+    border-bottom: 1px solid var(--hacker-green);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.map-container {
+    height: calc(100% - 30px);
+    position: relative;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIwLDUwIEwxODAsNTAgTDE4MCw4MCBMMTQWLW4wIEwxNDAsOTAgTDEyMCwxMTAgTDEwMCwxMTAgTDgwLDEzMCBMNjAsMTMwIEw1MCwxNzAgTDYwLDIxMCBMNzAsMjMwIEwxMDAsMjQwIEwxMjAsMjcwIEwxNDAsMjcwIEwxNjAsMjkwIEwxOTAsMzAwIEwyMjAsMzEwIEwyNDAsMzMwIiBzdHJva2U9IiMwZjAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0zMDAsNTAgTDM0MCw1MCBMTDM2MCw4MCBMTM4wLDExMCBMnDQwMCwxMzAgTDQxMCwxNTAgTDQwMCwxODAgTDM4MCwyMTAgTDQwMCwyNTAgTDQyMCwyODAgTDQzMCwzMDAiIHN0cm9rZT0iIzBmMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTU2MCw4MCBMNTY1LDEwMCBMNTgwLDEyMCBMNjAwLDE1MCBMNTY1LDE4MCBMNTU1LDIxMCBMNTQwLDI0MCBMNTU1LDI3MCBMTTU0MCwzMDAiIHN0cm9rZT0iIzBmMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PC9zdmc+') no-repeat center center;
+    background-size: contain;
+}
+
+.map-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--hacker-green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--hacker-green);
+    animation: pulse-point 1s infinite;
+}
+
+@keyframes pulse-point {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.attack-line {
+    position: absolute;
+    background-color: var(--hacker-green);
+    height: 2px;
+    transform-origin: left;
+    animation: attack-animate 1s linear;
+}
+
+@keyframes attack-animate {
+    0% { transform: scaleX(0); opacity: 1; }
+    100% { transform: scaleX(1); opacity: 0.5; }
+}
+
+.binary-streams {
+    background-color: rgba(0, 20, 0, 0.5);
+    border: 1px solid var(--hacker-green);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px var(--hacker-green);
+    overflow: hidden;
+}
+
+.binary-header {
+    border-bottom: 1px solid var(--hacker-green);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.binary-content {
+    height: calc(100% - 30px);
+    overflow: hidden;
+    position: relative;
+}
+
+.stats-panel {
+    background-color: rgba(0, 20, 0, 0.5);
+    border: 1px solid var(--hacker-green);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px var(--hacker-green);
+}
+
+.stats-header {
+    border-bottom: 1px solid var(--hacker-green);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.stats-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-item {
+    padding: 5px;
+    border: 1px solid var(--hacker-green-dark);
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.stat-name {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    height: 5px;
+    background-color: var(--hacker-green-dark);
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.progress-value {
+    height: 100%;
+    background-color: var(--hacker-green);
+    width: 0%;
+    border-radius: 3px;
+    box-shadow: 0 0 5px var(--hacker-green);
+    transition: width 0.5s;
+}
+
+.binary-stream {
+    position: absolute;
+    font-size: 16px;
+    color: var(--hacker-green);
+    opacity: 0.7;
+    line-height: 1;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
