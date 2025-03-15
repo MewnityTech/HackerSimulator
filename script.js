@@ -54,7 +54,6 @@ const canvas = document.getElementById('matrix-canvas');
          passwordInput.value = '';
          passwordInput.focus();
          
-         // Shake animation
          loginForm.style.animation = 'shake 0.5s';
          setTimeout(() => {
              loginForm.style.animation = '';
@@ -272,27 +271,27 @@ const canvas = document.getElementById('matrix-canvas');
      const sessionsValue = document.getElementById('sessions-value');
      
      function updateStats() {
-         // CPU Usage
+         // ПРАЦЕССАР
          const cpu = Math.floor(Math.random() * 30) + 70;
          cpuValue.textContent = cpu + '%';
          cpuBar.style.width = cpu + '%';
          
-         // Memory
+         // ОЗУ
          const memory = Math.floor(Math.random() * 20) + 70;
          memoryValue.textContent = memory + '%';
          memoryBar.style.width = memory + '%';
          
-         // Encryption
+         // БИЛЛШИФР
          const encryption = Math.floor(Math.random() * 10) + 90;
          encryptionValue.textContent = encryption + '%';
          encryptionBar.style.width = encryption + '%';
          
-         // Network
+         // СЕТЬ
          const network = Math.floor(Math.random() * 500) + 500;
          networkValue.textContent = network + ' Mbps';
          networkBar.style.width = (network / 1000 * 100) + '%';
          
-         // Sessions
+         // СЕССИЯ
          const sessions = Math.floor(Math.random() * 5) + 10;
          sessionsValue.textContent = sessions;
      }
