@@ -9,7 +9,7 @@
 
 ## 🌐 ДЕМО
 
-[View Live Demo](https://ProgCrafterq.github.io/cybermatrix-hacking-simulator/) 
+[Хакирхакиир](https://mewnitytech.github.io/HackerSimulator/) 
 
 ![Screenshot of CyberMatrix Hacking Simulator](screenshothack.png)
 
